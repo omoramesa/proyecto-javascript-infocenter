@@ -1,0 +1,87 @@
+@font-face {
+  font-family: NexaBold;
+  src: url(../styles/font/Nexa Bold.otf);
+}
+
+@font-face {
+  font-family: NexaLight;
+  src: url(../styles/font/Nexa Light.otf);
+}
+
+*{
+  font-family: NexaBold;
+  font-style: italic;
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.bg-img {
+  /* Control the height of the image */
+  min-height: 380px;
+  position: relative;
+  background-image: url(../images/login.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.loginText{
+  left: 30px;
+  font-family: NexaLight;
+  font-size: 15px;
+}
+
+.viImage{
+  width: 100px;
+  height: 100px;
+  left: 110px;
+  align-items: center;
+  position: relative;
+}
+
+.container {
+  position: relative;
+  top: 50px;
+  margin: 20px;
+  padding: 16px;
+  width: 576px;
+  background-color: rgba(247, 247, 255, 0.8);
+  border: 1px solid rgba(0, 0, 34, 0.8);
+  border-radius: 20px;
+}
+
+#username, #password {
+  font-family: NexaLight;
+  font-size: 10px;
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #F7F7FF;
+  text-decoration-color: #C4C4C4;
+  border: 1px solid rgba(0, 0, 34, 0.8);
+  border-radius: 20px;
+}
+
+.loginBtn{
+  font-family: NexaBold;
+  font-size: 15px;
+  left: 300px;
+  width: 200px;
+  height: 50px;
+  background: rgba(98, 98, 98, 0.4);
+  border: 1px solid rgba(0, 0, 34, 0.8);
+  border-radius: 20px;
+  align-items: center;
+}
+
+button:hover {
+  background-color: rgba(98, 98, 98, 0.0);
+}
