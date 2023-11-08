@@ -1,0 +1,199 @@
+@font-face {
+  font-family: NexaBold;
+  src: url(../styles/font/Nexa Bold.otf);
+}
+
+@font-face {
+  font-family: NexaLight;
+  src: url(../styles/font/Nexa Light.otf);
+}
+
+.viheader{
+	border: 1px solid;
+	border-color: rgba(169, 222, 249, 0.8);
+	height: 65px;
+	width: 100vw;
+	background-color: rgba(214, 236, 240, 0.5);
+}
+
+.companyHeader{
+	align-content: center;
+	width: 5%;
+}
+
+.viImage{
+	width: 60px;
+	height: 60px;
+	position: relative;
+}
+
+.pipeHeader{
+	width: 2%;
+}
+
+.pipeline{
+	background-color: #2541B2;
+ 	height: 100px;
+ 	width: 10%;
+ 	align-content: center;
+}
+
+.paddline{
+	padding-left: 10px;
+	padding-right: 5px;
+}
+
+.clientHeader{
+	align-content: center;
+	width: 5%;
+}
+
+.clientLogo{
+	width: 60px;
+	height: 60px;
+	align-content: center;
+	padding-left: 5px;
+}
+
+.spaceHeaer{
+	width: 50%;
+}
+
+.userInfo{
+	align-content: right;
+	width: 20%;
+}
+
+#nombreUsuario{
+	font-family: NexaBold;
+	font-size: 15px;
+	display: block;
+}
+
+#cargoUsuario, #fechaIngreso, #Login{
+	font-family: NexaLight;
+	font-style: italic;
+	font-size: 10px;
+	line-height: 0.2;
+	align-content: left;
+}
+
+#nombreUsuario, #cargoUsuario, #fechaIngreso, #Login{
+	align-content: stretch;
+	align-content: center;
+}
+
+.user{
+	filter: hue-rotate(240deg) saturate(100%) brightness(13%);	
+	width: 40px;
+	height: 40px;
+	align-content: center;
+	position: right;
+}
+
+.vertical-padding {
+	padding-left: 10px;
+	padding-right: 10px;
+}	
+
+.vertical-padding-min {
+	padding-left: 1px;
+	padding-right: 1px;
+}	
+
+.vertical-paddingth{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.vertical-padding-sub{
+	padding-left: 5px;
+	padding-right: 0px;
+}
+
+.long-padding {
+	padding-right: 100px;
+}	
+
+.vertical-line {
+  position: relative;
+  width: 1px; /* width of the line */
+  height: 60px; /* height of the line */
+}
+
+.vertical-line-sub {
+  position: relative;
+  width: 1px; /* width of the line */
+  height: 60px; /* height of the line */
+}
+
+.vertical-blue{
+	background-color: #2541B2;
+}
+
+.vertical-uranian{
+	background-color: #A9DEF9;
+}
+
+.vertical-line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5px; /* distance from the container to the line */
+  height: 100%; /* height of the line */
+  border-left: 1px; /* style of the line */
+}
+
+.header-right{
+	float: right;
+	height: 56px;
+}
+
+.lilink{
+	align-items: revert;
+}
+
+label{
+	line-height: 0;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+#dropdown-menu-option{
+	background-color: #F7F7FFF;
+}
+
+#dropdown-menu-option:hover {
+  background-color: rgba(169, 222, 249, 0.2);
+}
+
+.subheader{
+	border: 1px solid;
+	border-color: rgba(169, 222, 249, 0.8);
+	height: 30px;
+	width: 100vw;
+	background-color: #2541B2;
+}
+
+.userMenu{
+	fill: #FFFFFF;
+	align-content: center;
+	position: relative;
+	width: 20px;
+	height: 20px;
+}
+
+.menu{
+	position: relative;
+	width: 30px;
+	height: calc(100vh - 100px);
+	background-color: rgba(214, 236, 240, 0.5);
+}
+
+.menu:hover{
+	width: 250px;
+	height: calc(100vh - 100px);
+	background-color: rgba(214, 236, 240, 0.5);
+}
