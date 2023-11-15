@@ -1,6 +1,10 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    background-image:url(https://img.freepik.com/vector-gratis/fondo-naranja-abstracto-lineas-efecto-semitono_1017-32107.jpg) ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 h1 {
@@ -21,7 +25,7 @@ button {
 }
 
 #message {
-    color: green;
+    color: black;
     font-weight: bold;
 }
 
@@ -34,3 +38,12 @@ li {
     margin: 5px;
     padding: 5px;
 }
+ input{
+    border-radius:6px ;
+ }
+ .container {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
