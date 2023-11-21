@@ -12,7 +12,7 @@ function login() {
 
   if (user) {
     // Redireccionar a la página de bienvenida
-    window.location.href = 'bienvenido.html';
+    window.location.href = 'inventario.html';
   } else {
     alert('Usuario o clave inválida');
   }
