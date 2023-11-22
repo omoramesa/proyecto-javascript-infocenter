@@ -4,11 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-  <script src="../js/product.js"></script>
+
+
 
   <link rel="stylesheet" href="css/style.css">
   <title>Bienvenido</title>
@@ -35,7 +32,7 @@
 		  <button type="button" class="btn btn-info ml-2" onclick="listAllProducts()">
 			<img src="../icons/listar.png" alt="Listar Todos">
 		  </button>
-		  <button type="button" class="btn btn-info ml-2" onclick="downloadPdf()">
+		  <button type="button" id="buttonPdf" class="btn btn-info ml-2">
 			<img src="../icons/descargas.png" alt="Descargar productos">
 		  </button>
 		</div>
@@ -88,8 +85,17 @@
             <button type="button" class="btn btn-success" onclick="addOrEditProduct(); closeModal();"><i class="fas fa-check"></i> Agregar/Edita Producto</button>
           </form>
         </div>
+
       </div>
     </div>
   </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script>
+  <script src="../js/product.js"></script>
 </body>
 </html>
