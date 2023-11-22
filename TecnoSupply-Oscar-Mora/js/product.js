@@ -1,4 +1,5 @@
 // Vector para almacenar productos
+let buttonPdf=document.getElementById('buttonPdf');
 let products = [
   {
     code: "001",
@@ -19,6 +20,22 @@ let products = [
     price: 230000.00
   }
 ];
+
+
+let info=[]
+products.forEach((element,index,array)=> {
+    info.push([element.code,element.name,element.description,element.price]);
+});
+
+buttonPdf.addEventListener('click',(e)=>{
+
+    let doc=new jsPDF();
+    doc.autoTable({
+        head:[['Codigo','Nombre','Descripción', 'Precio']],
+        body:info
+    })
+    doc.save("lista_productos.pdf")
+})
 
 // Función para agregar o editar un producto
 function addOrEditProduct() {
@@ -94,7 +111,7 @@ function editProduct(code) {
   document.getElementById('productDescription').value = productToEdit.description;
   document.getElementById('productPrice').value = productToEdit.price;
 
-  // Abrir el modal de agregar producto y para editar
+  // Abrir el modal de agregar producto (que ahora se usa para editar también)
   $('#addProductModal').modal('show');
 }
 
@@ -192,3 +209,5 @@ document.addEventListener('DOMContentLoaded', function () {
   // Llamamos a la función para asignar íconos al inicio
   assignIconsToButtons();
 });
+
+
