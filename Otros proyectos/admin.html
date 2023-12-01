@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
-    <title>Inventario Ferretería MULTI</title>
+    <title>TecnoSupply</title>
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
-    <h1>Inventario Ferretería MULTI</h1>
+    <h1>TecnoSupply</h1>
     <div id="inventory-section" style="height: 200px; overflow-y: scroll;">
         <h2>Inventario</h2>
-        <ul id="product-list"></ul>
+        <ul id="productList"></ul>
+        <button id="deleteButton">Eliminar productos seleccionados</button>
     </div>
 
     <div id="add-product-form">
@@ -20,7 +21,8 @@
             <input type="text" id="product-code" placeholder="Código del Producto" required>
             <input type="text" id="product-name" placeholder="Nombre del Producto" required>
             <input type="number" id="product-quantity" placeholder="Cantidad" required>
-            <button type="button" onclick="addProduct()">Agregar</button>
+            <input type="float" id="product-price" placeholder="Precio" required>
+            <button onclick="addProduct()">Agregar</button>
         </form>
     </div>
     <div id="message"></div>
