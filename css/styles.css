@@ -1,0 +1,90 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input {
+  margin-bottom: 15px;
+  padding: 8px;
+}
+
+button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+a {
+  margin-top: 10px;
+  cursor: pointer;
+  color: #3498db;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Agregamos un estilo para el banner */
+.banner {
+  background-color: #007bff; /* Color de fondo azul  */
+  padding: 10px;
+  color: white; 
+  margin-bottom: 20px; /* Espacio entre el banner y el resto del contenido */
+}
+
+/* Estilo para el enlace de salida en el banner */
+.logout-link {
+  color: white;
+  text-decoration: none;
+}
+
+/* Cambiamos el estilo para que los enlaces de salida tengan un color diferente al enlace normal */
+.logout-link:hover {
+  color: #f8f9fa; /* Color de fondo al pasar el ratón */
+}
+
+
+/* Color de fondo para el modal */
+.modal-content {
+  background-color: #ffffff; /* Blanco */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilos para las tarjetas de productos */
+.card {
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin-bottom: 15px;
+}
+
+
+.logo-container {
+  text-align: center;
+  margin-top: 20px; /* Ajusta el margen superior según tus necesidades */
+}

@@ -5,7 +5,7 @@ let products = [
     code: "001",
     name: "Computador",
     description: "Potente portátil para trabajo y juegos.",
-    price: 4450000.00
+    price: 4550000.00
   },
   {
     code: "002",
@@ -21,58 +21,54 @@ let products = [
   }
 ];
 
-
-let info=[]
-products.forEach((element,index,array)=> {
-    info.push([element.code,element.name,element.description,element.price]);
-});
-
-buttonPdf.addEventListener('click',(e)=>{
-
-    let doc=new jsPDF();
-    doc.autoTable({
-        head:[['Codigo','Nombre','Descripción', 'Precio']],
-        body:info
-    })
-    doc.save("lista_productos.pdf")
-})
+//Vector ausiliar para la impresión del pdf
+let info=[];
 
 // Función para agregar o editar un producto
 function addOrEditProduct() {
+	
   const productCode = document.getElementById('productCode').value;
   const productName = document.getElementById('productName').value;
   const productDescription = document.getElementById('productDescription').value;
   const productPrice = document.getElementById('productPrice').value;
 
+ 
+  
   // Validación básica
-  if (!productName || !productDescription || !productPrice) {
-    alert('Por favor, complete todos los campos.');
-    return;
-  }
+	if (!productName || !productDescription || isNaN(productPrice) || productPrice <= 0) {
+	  alert('Por favor, complete todos los campos correctamente.');
+	  return;
+	}
 
   // Verificar si el código ya existe (para edición)
   const existingProduct = products.find(product => product.code === productCode);
 
-  if (existingProduct) {
-    // Editar el producto existente
-    existingProduct.name = productName;
-    existingProduct.description = productDescription;
-    existingProduct.price = parseFloat(productPrice);
-  } else {
-    // Crear un objeto de producto nuevo
-    const newProduct = {
-      code: generateProductCode(), // función para generar código
-      name: productName,
-      description: productDescription,
-      price: parseFloat(productPrice)
-    };
+ // Mostrar mensaje de confirmación para la edición o agregado
+  const confirmMessage = existingProduct ? '¿Deseas editar este producto?' : '¿Deseas agregar este nuevo producto?';
+  const confirmEdit = confirm(confirmMessage);
+	if (confirmEdit) {
+	  if (existingProduct) {
+		// Editar el producto existente
+		existingProduct.name = productName;
+		existingProduct.description = productDescription;
+		existingProduct.price = parseFloat(productPrice);
+	  } else {
+		// Crear un objeto de producto nuevo
+		const newProduct = {
+		  code: generateProductCode(), // función para generar código
+		  name: productName,
+		  description: productDescription,
+		  price: parseFloat(productPrice)
+		};
 
-    // Agregar el producto al vector
-    products.push(newProduct);
-  }
-
+		// Agregar el producto al vector
+		products.push(newProduct);
+		
+	  }
+	 }
   // Limpiar el formulario
   document.getElementById('addProductForm').reset();
+
 
   // Actualizar la lista de productos
   displayProducts();
@@ -113,6 +109,7 @@ function editProduct(code) {
 
   // Abrir el modal de agregar producto (que ahora se usa para editar también)
   $('#addProductModal').modal('show');
+    
 }
 
 // Función para mostrar la lista de productos
@@ -170,13 +167,21 @@ function displayProducts(productsToDisplay) {
     productCard.appendChild(cardBody);
     productsList.appendChild(productCard);
 	
+	info=[];
+	products.forEach((element,index,array)=> {
+		info.push([element.code,element.name,element.description,element.price]);
+	});
+	
   });
 }
 
 // Función para eliminar un producto
 function deleteProduct(index) {
-  products.splice(index, 1);
-  displayProducts();
+  const confirmDelete = confirm('¿Deseas eliminar este producto?');
+  if (confirmDelete) {
+    products.splice(index, 1);
+    displayProducts();
+  };
 }
 
 // Función para mostrar la lista de productos al cargar la página
@@ -211,3 +216,17 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+//Generación del pdf a partir del vector info
+buttonPdf.addEventListener('click', (e) => {
+  try {
+    let doc = new jsPDF();
+    doc.autoTable({
+      head: [['Codigo', 'Nombre', 'Descripción', 'Precio']],
+      body: info,
+    });
+    doc.save('lista_productos.pdf');
+  } catch (error) {
+    console.error('Error al generar el PDF:', error);
+    alert('Hubo un error al generar el PDF. Por favor, inténtelo de nuevo.');
+  }
+});

@@ -7,17 +7,18 @@
 
 
 
-  <link rel="stylesheet" href="css/style.css">
-  <title>Bienvenido</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <title>TecnoSupply</title>
 </head>
 <body>
   <div class="container mt-5">
   
-  <a href="../html/login.html">Salir</a>
+  <div class="col-4 text-right">
+	<a href="../index.html" class="logout-link">Salir</a>
+  </div>
   <div class="container">
    
     <h2>Bienvenido a</h2>
-  
     <img src="../img/logo.png" alt="Logo de la empresa" class="img-fluid mb-4">
     <h2 class="mb-4">Inventario de Productos de Tecnología</h2>
     
@@ -68,7 +69,7 @@
           <form id="addProductForm">
             <div class="form-group">
               <label for="productCode">Código del Producto:</label>
-              <input type="text" class="form-control" id="productCode" required>
+              <input type="text" class="form-control" id="productCode" required disabled>
             </div>
             <div class="form-group">
               <label for="productName">Nombre del Producto:</label>
